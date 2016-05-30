@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E0ADFFD1CFB1F6700DBF0BC /* FootballVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADFFC1CFB1F6700DBF0BC /* FootballVC.swift */; };
+		2E0ADFFF1CFB356400DBF0BC /* BasketballVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADFFE1CFB356400DBF0BC /* BasketballVC.swift */; };
+		2E0AE0011CFB35BB00DBF0BC /* TennisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0AE0001CFB35BB00DBF0BC /* TennisVC.swift */; };
+		2E0AE0041CFB6AE400DBF0BC /* MatchPitchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0AE0031CFB6AE400DBF0BC /* MatchPitchProtocol.swift */; };
+		2E381BC91CFA3F9D00665698 /* DrawBasketballField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E381BC81CFA3F9D00665698 /* DrawBasketballField.swift */; };
+		2E4892541CF887DE0037187A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892531CF887DE0037187A /* AppDelegate.swift */; };
+		2E4892561CF887DE0037187A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892551CF887DE0037187A /* ViewController.swift */; };
+		2E4892591CF887DE0037187A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4892571CF887DE0037187A /* Main.storyboard */; };
+		2E48925B1CF887DE0037187A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E48925A1CF887DE0037187A /* Assets.xcassets */; };
+		2E48925E1CF887DE0037187A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E48925C1CF887DE0037187A /* LaunchScreen.storyboard */; };
+		2E4892691CF887DE0037187A /* KLIKA_iOS_Naloga_2016Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892681CF887DE0037187A /* KLIKA_iOS_Naloga_2016Tests.swift */; };
+		2E4892741CF887DE0037187A /* KLIKA_iOS_Naloga_2016UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892731CF887DE0037187A /* KLIKA_iOS_Naloga_2016UITests.swift */; };
+		2E4892831CF8C08E0037187A /* DrawFootballField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892821CF8C08E0037187A /* DrawFootballField.swift */; };
+		2E9725191CFAD14300D8CCCD /* DrawTennisField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E4892651CF887DE0037187A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E4892481CF887DE0037187A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E48924F1CF887DE0037187A;
+			remoteInfo = "KLIKA iOS Naloga 2016";
+		};
+		2E4892701CF887DE0037187A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E4892481CF887DE0037187A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E48924F1CF887DE0037187A;
+			remoteInfo = "KLIKA iOS Naloga 2016";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E0ADFFC1CFB1F6700DBF0BC /* FootballVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballVC.swift; sourceTree = "<group>"; };
+		2E0ADFFE1CFB356400DBF0BC /* BasketballVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballVC.swift; sourceTree = "<group>"; };
+		2E0AE0001CFB35BB00DBF0BC /* TennisVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TennisVC.swift; sourceTree = "<group>"; };
+		2E0AE0031CFB6AE400DBF0BC /* MatchPitchProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchPitchProtocol.swift; sourceTree = "<group>"; };
+		2E381BC81CFA3F9D00665698 /* DrawBasketballField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawBasketballField.swift; sourceTree = "<group>"; };
+		2E4892501CF887DE0037187A /* KLIKA iOS Naloga 2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KLIKA iOS Naloga 2016.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4892531CF887DE0037187A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2E4892551CF887DE0037187A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E4892581CF887DE0037187A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E48925A1CF887DE0037187A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E48925D1CF887DE0037187A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2E48925F1CF887DE0037187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E4892641CF887DE0037187A /* KLIKA iOS Naloga 2016Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KLIKA iOS Naloga 2016Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4892681CF887DE0037187A /* KLIKA_iOS_Naloga_2016Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KLIKA_iOS_Naloga_2016Tests.swift; sourceTree = "<group>"; };
+		2E48926A1CF887DE0037187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E48926F1CF887DE0037187A /* KLIKA iOS Naloga 2016UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KLIKA iOS Naloga 2016UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4892731CF887DE0037187A /* KLIKA_iOS_Naloga_2016UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KLIKA_iOS_Naloga_2016UITests.swift; sourceTree = "<group>"; };
+		2E4892751CF887DE0037187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E4892821CF8C08E0037187A /* DrawFootballField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawFootballField.swift; sourceTree = "<group>"; };
+		2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTennisField.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E48924D1CF887DE0037187A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4892611CF887DE0037187A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E48926C1CF887DE0037187A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E0ADFFB1CFB1F4E00DBF0BC /* Sport Fields VC */ = {
+			isa = PBXGroup;
+			children = (
+				2E0ADFFC1CFB1F6700DBF0BC /* FootballVC.swift */,
+				2E0ADFFE1CFB356400DBF0BC /* BasketballVC.swift */,
+				2E0AE0001CFB35BB00DBF0BC /* TennisVC.swift */,
+			);
+			name = "Sport Fields VC";
+			sourceTree = "<group>";
+		};
+		2E0AE0021CFB6ABE00DBF0BC /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2E0AE0031CFB6AE400DBF0BC /* MatchPitchProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		2E4892471CF887DE0037187A = {
+			isa = PBXGroup;
+			children = (
+				2E4892521CF887DE0037187A /* KLIKA iOS Naloga 2016 */,
+				2E4892671CF887DE0037187A /* KLIKA iOS Naloga 2016Tests */,
+				2E4892721CF887DE0037187A /* KLIKA iOS Naloga 2016UITests */,
+				2E4892511CF887DE0037187A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2E4892511CF887DE0037187A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E4892501CF887DE0037187A /* KLIKA iOS Naloga 2016.app */,
+				2E4892641CF887DE0037187A /* KLIKA iOS Naloga 2016Tests.xctest */,
+				2E48926F1CF887DE0037187A /* KLIKA iOS Naloga 2016UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E4892521CF887DE0037187A /* KLIKA iOS Naloga 2016 */ = {
+			isa = PBXGroup;
+			children = (
+				2E0AE0021CFB6ABE00DBF0BC /* Protocol */,
+				2E0ADFFB1CFB1F4E00DBF0BC /* Sport Fields VC */,
+				2E4892811CF8C05E0037187A /* Draw */,
+				2E4892531CF887DE0037187A /* AppDelegate.swift */,
+				2E4892551CF887DE0037187A /* ViewController.swift */,
+				2E4892571CF887DE0037187A /* Main.storyboard */,
+				2E48925A1CF887DE0037187A /* Assets.xcassets */,
+				2E48925C1CF887DE0037187A /* LaunchScreen.storyboard */,
+				2E48925F1CF887DE0037187A /* Info.plist */,
+			);
+			path = "KLIKA iOS Naloga 2016";
+			sourceTree = "<group>";
+		};
+		2E4892671CF887DE0037187A /* KLIKA iOS Naloga 2016Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2E4892681CF887DE0037187A /* KLIKA_iOS_Naloga_2016Tests.swift */,
+				2E48926A1CF887DE0037187A /* Info.plist */,
+			);
+			path = "KLIKA iOS Naloga 2016Tests";
+			sourceTree = "<group>";
+		};
+		2E4892721CF887DE0037187A /* KLIKA iOS Naloga 2016UITests */ = {
+			isa = PBXGroup;
+			children = (
+				2E4892731CF887DE0037187A /* KLIKA_iOS_Naloga_2016UITests.swift */,
+				2E4892751CF887DE0037187A /* Info.plist */,
+			);
+			path = "KLIKA iOS Naloga 2016UITests";
+			sourceTree = "<group>";
+		};
+		2E4892811CF8C05E0037187A /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				2E4892821CF8C08E0037187A /* DrawFootballField.swift */,
+				2E381BC81CFA3F9D00665698 /* DrawBasketballField.swift */,
+				2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */,
+			);
+			name = Draw;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E48924F1CF887DE0037187A /* KLIKA iOS Naloga 2016 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E4892781CF887DE0037187A /* Build configuration list for PBXNativeTarget "KLIKA iOS Naloga 2016" */;
+			buildPhases = (
+				2E48924C1CF887DE0037187A /* Sources */,
+				2E48924D1CF887DE0037187A /* Frameworks */,
+				2E48924E1CF887DE0037187A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KLIKA iOS Naloga 2016";
+			productName = "KLIKA iOS Naloga 2016";
+			productReference = 2E4892501CF887DE0037187A /* KLIKA iOS Naloga 2016.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2E4892631CF887DE0037187A /* KLIKA iOS Naloga 2016Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E48927B1CF887DE0037187A /* Build configuration list for PBXNativeTarget "KLIKA iOS Naloga 2016Tests" */;
+			buildPhases = (
+				2E4892601CF887DE0037187A /* Sources */,
+				2E4892611CF887DE0037187A /* Frameworks */,
+				2E4892621CF887DE0037187A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E4892661CF887DE0037187A /* PBXTargetDependency */,
+			);
+			name = "KLIKA iOS Naloga 2016Tests";
+			productName = "KLIKA iOS Naloga 2016Tests";
+			productReference = 2E4892641CF887DE0037187A /* KLIKA iOS Naloga 2016Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2E48926E1CF887DE0037187A /* KLIKA iOS Naloga 2016UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E48927E1CF887DE0037187A /* Build configuration list for PBXNativeTarget "KLIKA iOS Naloga 2016UITests" */;
+			buildPhases = (
+				2E48926B1CF887DE0037187A /* Sources */,
+				2E48926C1CF887DE0037187A /* Frameworks */,
+				2E48926D1CF887DE0037187A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E4892711CF887DE0037187A /* PBXTargetDependency */,
+			);
+			name = "KLIKA iOS Naloga 2016UITests";
+			productName = "KLIKA iOS Naloga 2016UITests";
+			productReference = 2E48926F1CF887DE0037187A /* KLIKA iOS Naloga 2016UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E4892481CF887DE0037187A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Boris Filipovic";
+				TargetAttributes = {
+					2E48924F1CF887DE0037187A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					2E4892631CF887DE0037187A = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 2E48924F1CF887DE0037187A;
+					};
+					2E48926E1CF887DE0037187A = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 2E48924F1CF887DE0037187A;
+					};
+				};
+			};
+			buildConfigurationList = 2E48924B1CF887DE0037187A /* Build configuration list for PBXProject "KLIKA iOS Naloga 2016" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E4892471CF887DE0037187A;
+			productRefGroup = 2E4892511CF887DE0037187A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E48924F1CF887DE0037187A /* KLIKA iOS Naloga 2016 */,
+				2E4892631CF887DE0037187A /* KLIKA iOS Naloga 2016Tests */,
+				2E48926E1CF887DE0037187A /* KLIKA iOS Naloga 2016UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E48924E1CF887DE0037187A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E48925E1CF887DE0037187A /* LaunchScreen.storyboard in Resources */,
+				2E48925B1CF887DE0037187A /* Assets.xcassets in Resources */,
+				2E4892591CF887DE0037187A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4892621CF887DE0037187A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E48926D1CF887DE0037187A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E48924C1CF887DE0037187A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0ADFFD1CFB1F6700DBF0BC /* FootballVC.swift in Sources */,
+				2E4892831CF8C08E0037187A /* DrawFootballField.swift in Sources */,
+				2E9725191CFAD14300D8CCCD /* DrawTennisField.swift in Sources */,
+				2E0ADFFF1CFB356400DBF0BC /* BasketballVC.swift in Sources */,
+				2E4892561CF887DE0037187A /* ViewController.swift in Sources */,
+				2E0AE0011CFB35BB00DBF0BC /* TennisVC.swift in Sources */,
+				2E0AE0041CFB6AE400DBF0BC /* MatchPitchProtocol.swift in Sources */,
+				2E4892541CF887DE0037187A /* AppDelegate.swift in Sources */,
+				2E381BC91CFA3F9D00665698 /* DrawBasketballField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4892601CF887DE0037187A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E4892691CF887DE0037187A /* KLIKA_iOS_Naloga_2016Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E48926B1CF887DE0037187A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E4892741CF887DE0037187A /* KLIKA_iOS_Naloga_2016UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E4892661CF887DE0037187A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E48924F1CF887DE0037187A /* KLIKA iOS Naloga 2016 */;
+			targetProxy = 2E4892651CF887DE0037187A /* PBXContainerItemProxy */;
+		};
+		2E4892711CF887DE0037187A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E48924F1CF887DE0037187A /* KLIKA iOS Naloga 2016 */;
+			targetProxy = 2E4892701CF887DE0037187A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2E4892571CF887DE0037187A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E4892581CF887DE0037187A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2E48925C1CF887DE0037187A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E48925D1CF887DE0037187A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E4892761CF887DE0037187A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2E4892771CF887DE0037187A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E4892791CF887DE0037187A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "KLIKA iOS Naloga 2016/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bf.slo.KLIKA-iOS-Naloga-2016";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2E48927A1CF887DE0037187A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "KLIKA iOS Naloga 2016/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bf.slo.KLIKA-iOS-Naloga-2016";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2E48927C1CF887DE0037187A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "KLIKA iOS Naloga 2016Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bf.slo.KLIKA-iOS-Naloga-2016Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KLIKA iOS Naloga 2016.app/KLIKA iOS Naloga 2016";
+			};
+			name = Debug;
+		};
+		2E48927D1CF887DE0037187A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "KLIKA iOS Naloga 2016Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bf.slo.KLIKA-iOS-Naloga-2016Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KLIKA iOS Naloga 2016.app/KLIKA iOS Naloga 2016";
+			};
+			name = Release;
+		};
+		2E48927F1CF887DE0037187A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "KLIKA iOS Naloga 2016UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bf.slo.KLIKA-iOS-Naloga-2016UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "KLIKA iOS Naloga 2016";
+			};
+			name = Debug;
+		};
+		2E4892801CF887DE0037187A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "KLIKA iOS Naloga 2016UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bf.slo.KLIKA-iOS-Naloga-2016UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "KLIKA iOS Naloga 2016";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E48924B1CF887DE0037187A /* Build configuration list for PBXProject "KLIKA iOS Naloga 2016" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E4892761CF887DE0037187A /* Debug */,
+				2E4892771CF887DE0037187A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E4892781CF887DE0037187A /* Build configuration list for PBXNativeTarget "KLIKA iOS Naloga 2016" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E4892791CF887DE0037187A /* Debug */,
+				2E48927A1CF887DE0037187A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E48927B1CF887DE0037187A /* Build configuration list for PBXNativeTarget "KLIKA iOS Naloga 2016Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E48927C1CF887DE0037187A /* Debug */,
+				2E48927D1CF887DE0037187A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E48927E1CF887DE0037187A /* Build configuration list for PBXNativeTarget "KLIKA iOS Naloga 2016UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E48927F1CF887DE0037187A /* Debug */,
+				2E4892801CF887DE0037187A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E4892481CF887DE0037187A /* Project object */;
+}
