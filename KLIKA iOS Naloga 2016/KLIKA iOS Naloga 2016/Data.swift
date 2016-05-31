@@ -11,7 +11,7 @@ import UIKit
 
 struct Data {
     
-    func GetTennisFieldData(forViewSpec width:CGFloat, height: CGFloat, rectWidth:CGFloat, rectHeight:CGFloat, withMargins marginX:CGFloat, marginY:CGFloat) -> ([String:[CGPoint]],[Bool:[CGFloat]]) {
+    func GetFieldData(forFieldType type:SportTypes, forViewSpec width:CGFloat, height: CGFloat, rectWidth:CGFloat, rectHeight:CGFloat, withMargins marginX:CGFloat, marginY:CGFloat) -> ([String:[CGPoint]]?,[Bool:[CGFloat]]?) {
         
         // Tennis.
         var linesDataTennis = [String:[CGPoint]]()
@@ -26,7 +26,7 @@ struct Data {
         var circleDataBasketball = [Bool:[CGFloat]]()
         
         // Populate linesData.
-        linesData = [
+        linesDataTennis = [
             "Outline":[CGPoint(x: marginX, y: marginX), CGPoint(x: width, y: marginX), CGPoint(x: width, y: height - marginX), CGPoint(x: marginX, y: height - marginX), CGPoint(x: marginX, y: marginX)],
             "TopHorLine":[CGPoint(x: marginX, y: height * 0.5 - height * 0.3647), CGPoint(x: width, y: height * 0.5 - height * 0.3647)],
             "BottomHorLine":[CGPoint(x: marginX, y: height * 0.5 + height * 0.3647), CGPoint(x: width, y: height * 0.5 + height * 0.3647)],
@@ -37,7 +37,30 @@ struct Data {
             //"Line":[CGPoint(x: , y: ), CGPoint(x: , y: )]
         ]
         
-        return (linesData, circleData)
+        linesDataFootball = [
+            "Outline":[CGPoint(x: marginX, y: marginX), CGPoint(x: width, y: marginX), CGPoint(x: width, y: height - marginX), CGPoint(x: marginX, y: marginX)],
+            "Line1":[CGPoint(x: rectWidth * 0.5, y: marginX), CGPoint(x: rectWidth * 0.5, y: height - marginX)],
+            "Line3":[CGPoint(x: marginX, y: rectHeight * 0.5 - rectHeight * 0.3), CGPoint(x: marginX + width * 0.13, y: rectHeight * 0.5 - rectHeight * 0.3 ),CGPoint(x: marginX + width * 0.13, y: rectHeight * 0.5 + rectHeight * 0.3), CGPoint(x: marginX, y: rectHeight * 0.5 + rectHeight * 0.3)],
+            "Line4":[CGPoint(x: marginX, y: rectHeight * 0.5 - rectHeight * 0.15), CGPoint(x: marginX + width * 0.068, y: rectHeight * 0.5 - rectHeight * 0.15 ),CGPoint(x: marginX + width * 0.068, y: rectHeight * 0.5 + rectHeight * 0.15), CGPoint(x: marginX, y: rectHeight * 0.5 + rectHeight * 0.15)],
+            "Line7":[CGPoint(x: width, y: rectHeight * 0.5 - rectHeight * 0.3), CGPoint(x: width - width * 0.13, y: rectHeight * 0.5 - rectHeight * 0.3 ),CGPoint(x: width - width * 0.13, y: rectHeight * 0.5 + rectHeight * 0.3), CGPoint(x: width, y: rectHeight * 0.5 + rectHeight * 0.3)],
+            "Line8":[CGPoint(x: width, y: rectHeight * 0.5 - rectHeight * 0.15), CGPoint(x: width - width * 0.068, y: rectHeight * 0.5 - rectHeight * 0.15 ),CGPoint(x: width - width * 0.068, y: rectHeight * 0.5 + rectHeight * 0.15), CGPoint(x: width, y: rectHeight * 0.5 + rectHeight * 0.15)],
+        ]
+        
+        circleDataFootball = [
+            true: [(rectWidth * 0.5), (height * 0.5), (height * 0.1572), 0, CGFloat(M_PI * 2)], // Line 2 - Central circle.
+            true: [(marginX + width * 0.099), (rectHeight * 0.5), 1, 0, CGFloat(M_PI * 2)], // Line 5 - Left penalty circle.
+            true: [(marginX + width * 0.099), (rectHeight * 0.5), (height * 0.1572), CGFloat(-M_PI_2 + 0.43), CGFloat(M_PI_2 - 0.43)], // Line 6 - Left arc circle.
+            // true: [(), (), (), 0, CGFloat(M_PI)]
+        ]
+        
+        switch type {
+        case .Football:
+            return (linesDataFootball, circleDataFootball)
+        case .Basketball:
+            return(linesDataBasketball, circleDataBasketball)
+        case .Tennis:
+            return(linesDataTennis, nil)
+        }
         
     }
     
