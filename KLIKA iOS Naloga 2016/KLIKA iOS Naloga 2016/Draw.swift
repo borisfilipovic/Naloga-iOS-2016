@@ -24,7 +24,7 @@ class Draw:DrawShapesProtocol {
         self.marginX = marginX
         self.marginY = marginY
     }
-    
+
     func getPath(forSportType selector: SportTypes) -> CGPath {
         switch selector {
         case .Basketball:

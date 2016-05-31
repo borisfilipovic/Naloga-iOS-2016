@@ -63,6 +63,8 @@ class DrawBasketballField: UIView {
             clockwise: true)
         CGContextAddPath(context, circlePathLeft.CGPath)
         
+        
+        
         // Inner line.
         CGContextMoveToPoint(context, marginX, rect.height * 0.5 - rect.height * 0.165)
         CGContextAddLineToPoint(context, CalcWidth(fromBaseRectWidth: width, fromPercentage: 20.76), rect.height * 0.5 - rect.height * 0.165)
@@ -92,19 +94,44 @@ class DrawBasketballField: UIView {
         CGContextMoveToPoint(context, marginX + rect.width * 0.1638, rect.height * 0.5 - rect.height * 0.165 - 1)
         CGContextAddLineToPoint(context, marginX + rect.width * 0.1638 + rect.width * 0.0055, rect.height * 0.5 - rect.height * 0.165 - 1)
         
+        
         // Left side lower player positions.
         // 1.
         CGContextMoveToPoint(context, marginX + rect.width * 0.06, rect.height * 0.5 + rect.height * 0.165 + 1)
         CGContextAddLineToPoint(context, marginX + rect.width * 0.06 + rect.width * 0.0055, rect.height * 0.5 + rect.height * 0.165 + 1)
+        
+        
         // 2.
         CGContextMoveToPoint(context, marginX + rect.width * 0.09, rect.height * 0.5 + rect.height * 0.165 + 1)
         CGContextAddLineToPoint(context, marginX + rect.width * 0.09 + rect.width * 0.0136, rect.height * 0.5 + rect.height * 0.165 + 1)
+        
+        
         // 3.
         CGContextMoveToPoint(context, marginX + rect.width * 0.1338, rect.height * 0.5 + rect.height * 0.165 + 1)
         CGContextAddLineToPoint(context, marginX + rect.width * 0.1338 + rect.width * 0.0055, rect.height * 0.5 + rect.height * 0.165 + 1)
+        
+        
         // 4.
         CGContextMoveToPoint(context, marginX + rect.width * 0.1638, rect.height * 0.5 + rect.height * 0.165 + 1)
         CGContextAddLineToPoint(context, marginX + rect.width * 0.1638 + rect.width * 0.0055, rect.height * 0.5 + rect.height * 0.165 + 1)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         // Basketball rim left.
         // 1.

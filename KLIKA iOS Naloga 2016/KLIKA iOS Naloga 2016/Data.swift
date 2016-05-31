@@ -31,8 +31,25 @@ struct Data {
     
     func getBasketballFieldPath(width:CGFloat, height: CGFloat, rectWidth:CGFloat, rectHeight:CGFloat, marginX:CGFloat, marginY:CGFloat) -> CGPath {
         
-        let lines = [[CGPoint]]()
+        let const1:CGFloat = 0.4227
         
+        let lines = [[CGPoint(x: marginX, y: marginY), CGPoint(x: width, y: marginY), CGPoint(x: width, y: width * const1), CGPoint(x: marginX, y: width * const1), CGPoint(x: marginX, y: marginY)],
+            [CGPoint(x: rectWidth * 0.5, y: marginY), CGPoint(x: rectWidth * 0.5, y: width * const1)],
+            [CGPoint(x: marginX, y: rectHeight * 0.5), CGPoint(x: width * 0.112, y: rectHeight * 0.5 - rectHeight * 0.44)],
+            [CGPoint(x: marginX, y: rectHeight * 0.5 + rectHeight * 0.44), CGPoint(x: width * 0.112, y: rectHeight * 0.5 + rectHeight * 0.44)],
+            // Left side upper player position.
+            [CGPoint(x: marginX + rectWidth * 0.06, y: rectHeight * 0.5 - rectHeight * 0.165 - 1), CGPoint(x: marginX + rectWidth * 0.06 + rectWidth * 0.0055, y: rectHeight * 0.5 - rectHeight * 0.165 - 1)],
+            [CGPoint(x: marginX + rectWidth * 0.09, y: rectHeight * 0.5 - rectHeight * 0.165 - 1), CGPoint(x: marginX + rectWidth * 0.09 + rectWidth * 0.0136, y: rectHeight * 0.5 - rectHeight * 0.165 - 1)],
+            [CGPoint(x: marginX + rectWidth * 0.1338, y: rectHeight * 0.5 - rectHeight * 0.165 - 1), CGPoint(x: marginX + rectWidth * 0.1338 + rectWidth * 0.0055, y: rectHeight * 0.5 - rectHeight * 0.165 - 1)],
+            [CGPoint(x: marginX + rectWidth * 0.1638, y: rectHeight * 0.5 - rectHeight * 0.165 - 1), CGPoint(x: marginX + rectWidth * 0.1638 + rectWidth * 0.0055, y: rectHeight * 0.5 - rectHeight * 0.165 - 1)],
+            // Left side lower player position.
+            [CGPoint(x: marginX + rectWidth * 0.06, y: rectHeight * 0.5 + rectHeight * 0.165 + 1), CGPoint(x: marginX + rectWidth * 0.06 + rectWidth * 0.0055, y: rectHeight * 0.5 + rectHeight * 0.165 - 1)],
+           [CGPoint(x: marginX + rectWidth * 0.09, y: rectHeight * 0.5 + rectHeight * 0.165 + 1), CGPoint(x: marginX + rectWidth * 0.09 + rectWidth * 0.00136, y: rectHeight * 0.5 + rectHeight * 0.165 - 1)],
+           [CGPoint(x: marginX + rectWidth * 0.1338, y: rectHeight * 0.5 + rectHeight * 0.165 + 1), CGPoint(x: marginX + rectWidth * 0.1338 + rectWidth * 0.0055, y: rectHeight * 0.5 + rectHeight * 0.165 - 1)],
+           [CGPoint(x: marginX + rectWidth * 0.1638, y: rectHeight * 0.5 + rectHeight * 0.165 + 1), CGPoint(x: marginX + rectWidth * 0.1638 + rectWidth * 0.0055, y: rectHeight * 0.5 + rectHeight * 0.165 - 1)],
+           
+            ]
+        // [CGPoint(x: <#T##CGFloat#>, y: <#T##CGFloat#>)]
         return generatePath(lines, circles: nil)
     }
     
