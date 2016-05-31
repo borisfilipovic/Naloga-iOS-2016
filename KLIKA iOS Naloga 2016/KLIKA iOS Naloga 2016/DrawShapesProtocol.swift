@@ -9,6 +9,12 @@
 import UIKit
 
 protocol DrawShapesProtocol {
-    var paths:[CGPath]? {get set}
-    mutating func generatePath(fromPoints points:[String:[CGPoint]], andCircleFrom params:[Bool:[CGFloat]])-> [CGPath]?
+    var height:CGFloat{get set}
+    var width: CGFloat{get set}
+    var rectWidth:CGFloat{get set}
+    var rectHeight:CGFloat{get set}
+    var marginX:CGFloat{get set}
+    var marginY:CGFloat{get set}
+    
+    func getPath(forSportType selector:SportTypes)->CGPath
 }

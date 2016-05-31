@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct DrawData: DrawShapesProtocol {
+struct DrawData {
     
     var paths: [CGPath]?
     

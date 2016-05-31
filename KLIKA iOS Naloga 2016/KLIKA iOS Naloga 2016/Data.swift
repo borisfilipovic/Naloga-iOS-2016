@@ -8,60 +8,76 @@
 
 import UIKit
 
-
 struct Data {
     
-    func GetFieldData(forFieldType type:SportTypes, forViewSpec width:CGFloat, height: CGFloat, rectWidth:CGFloat, rectHeight:CGFloat, withMargins marginX:CGFloat, marginY:CGFloat) -> ([String:[CGPoint]]?,[Bool:[CGFloat]]?) {
+    func getFootballFieldPath(width:CGFloat, height: CGFloat, rectWidth:CGFloat, rectHeight:CGFloat, marginX:CGFloat, marginY:CGFloat) -> CGPath {
+        let lines = [[CGPoint(x: marginX, y: marginX), CGPoint(x: width, y: marginX), CGPoint(x: width, y: height - marginX), CGPoint(x: marginX, y: marginX)], [CGPoint(x: rectWidth * 0.5, y: marginX), CGPoint(x: rectWidth * 0.5, y: height - marginX)], [CGPoint(x: marginX, y: rectHeight * 0.5 - rectHeight * 0.3), CGPoint(x: marginX + width * 0.13, y: rectHeight * 0.5 - rectHeight * 0.3 ),CGPoint(x: marginX + width * 0.13, y: rectHeight * 0.5 + rectHeight * 0.3), CGPoint(x: marginX, y: rectHeight * 0.5 + rectHeight * 0.3)], [CGPoint(x: marginX, y: rectHeight * 0.5 - rectHeight * 0.15), CGPoint(x: marginX + width * 0.068, y: rectHeight * 0.5 - rectHeight * 0.15 ),CGPoint(x: marginX + width * 0.068, y: rectHeight * 0.5 + rectHeight * 0.15), CGPoint(x: marginX, y: rectHeight * 0.5 + rectHeight * 0.15)], [CGPoint(x: width, y: rectHeight * 0.5 - rectHeight * 0.3), CGPoint(x: width - width * 0.13, y: rectHeight * 0.5 - rectHeight * 0.3 ),CGPoint(x: width - width * 0.13, y: rectHeight * 0.5 + rectHeight * 0.3), CGPoint(x: width, y: rectHeight * 0.5 + rectHeight * 0.3)],[CGPoint(x: width, y: rectHeight * 0.5 - rectHeight * 0.15), CGPoint(x: width - width * 0.068, y: rectHeight * 0.5 - rectHeight * 0.15 ),CGPoint(x: width - width * 0.068, y: rectHeight * 0.5 + rectHeight * 0.15), CGPoint(x: width, y: rectHeight * 0.5 + rectHeight * 0.15)]]
         
-        // Tennis.
-        var linesDataTennis = [String:[CGPoint]]()
-        var circleData = [Bool:[CGFloat]]()
-        
-        // Football.
-        var linesDataFootball = [String:[CGPoint]]()
-        var circleDataFootball = [Bool:[CGFloat]]()
-        
-        // Basketball.
-        var linesDataBasketball = [String:[CGPoint]]()
-        var circleDataBasketball = [Bool:[CGFloat]]()
-        
-        // Populate linesData.
-        linesDataTennis = [
-            "Outline":[CGPoint(x: marginX, y: marginX), CGPoint(x: width, y: marginX), CGPoint(x: width, y: height - marginX), CGPoint(x: marginX, y: height - marginX), CGPoint(x: marginX, y: marginX)],
-            "TopHorLine":[CGPoint(x: marginX, y: height * 0.5 - height * 0.3647), CGPoint(x: width, y: height * 0.5 - height * 0.3647)],
-            "BottomHorLine":[CGPoint(x: marginX, y: height * 0.5 + height * 0.3647), CGPoint(x: width, y: height * 0.5 + height * 0.3647)],
-            "CenterLine":[CGPoint(x: rectWidth * 0.5, y: marginX), CGPoint(x: rectWidth * 0.5, y: height - marginX)],
-            "Line4":[CGPoint(x: rectWidth * 0.5 - rectWidth * 0.2607, y: height * 0.5 - height * 0.3647), CGPoint(x: rectWidth * 0.5 - rectWidth * 0.2607, y: height * 0.5 + height * 0.3647)],
-            "Line5":[CGPoint(x: rectWidth * 0.5 + rectWidth * 0.2607, y: height * 0.5 + height * 0.3647), CGPoint(x: rectWidth * 0.5 + rectWidth * 0.2607, y: height * 0.5 - height * 0.3647)],
-            "Line6":[CGPoint(x: rectWidth * 0.5 + rectWidth * 0.2607, y: height * 0.5 ), CGPoint(x: rectWidth * 0.5 - rectWidth * 0.2607, y: height * 0.5)]
-            //"Line":[CGPoint(x: , y: ), CGPoint(x: , y: )]
+        let circles = [
+            true: [(rectWidth * 0.5), (height * 0.5), (height * 0.1572), 0, CGFloat(M_PI * 2)],
+            true: [(marginX + width * 0.099), (rectHeight * 0.5), 1, 0, CGFloat(M_PI * 2)],
+            true: [(marginX + width * 0.099), (rectHeight * 0.5), (height * 0.1572), CGFloat(-M_PI_2 + 0.43), CGFloat(M_PI_2 - 0.43)],
         ]
-        
-        linesDataFootball = [
-            "Outline":[CGPoint(x: marginX, y: marginX), CGPoint(x: width, y: marginX), CGPoint(x: width, y: height - marginX), CGPoint(x: marginX, y: marginX)],
-            "Line1":[CGPoint(x: rectWidth * 0.5, y: marginX), CGPoint(x: rectWidth * 0.5, y: height - marginX)],
-            "Line3":[CGPoint(x: marginX, y: rectHeight * 0.5 - rectHeight * 0.3), CGPoint(x: marginX + width * 0.13, y: rectHeight * 0.5 - rectHeight * 0.3 ),CGPoint(x: marginX + width * 0.13, y: rectHeight * 0.5 + rectHeight * 0.3), CGPoint(x: marginX, y: rectHeight * 0.5 + rectHeight * 0.3)],
-            "Line4":[CGPoint(x: marginX, y: rectHeight * 0.5 - rectHeight * 0.15), CGPoint(x: marginX + width * 0.068, y: rectHeight * 0.5 - rectHeight * 0.15 ),CGPoint(x: marginX + width * 0.068, y: rectHeight * 0.5 + rectHeight * 0.15), CGPoint(x: marginX, y: rectHeight * 0.5 + rectHeight * 0.15)],
-            "Line7":[CGPoint(x: width, y: rectHeight * 0.5 - rectHeight * 0.3), CGPoint(x: width - width * 0.13, y: rectHeight * 0.5 - rectHeight * 0.3 ),CGPoint(x: width - width * 0.13, y: rectHeight * 0.5 + rectHeight * 0.3), CGPoint(x: width, y: rectHeight * 0.5 + rectHeight * 0.3)],
-            "Line8":[CGPoint(x: width, y: rectHeight * 0.5 - rectHeight * 0.15), CGPoint(x: width - width * 0.068, y: rectHeight * 0.5 - rectHeight * 0.15 ),CGPoint(x: width - width * 0.068, y: rectHeight * 0.5 + rectHeight * 0.15), CGPoint(x: width, y: rectHeight * 0.5 + rectHeight * 0.15)],
-        ]
-        
-        circleDataFootball = [
-            true: [(rectWidth * 0.5), (height * 0.5), (height * 0.1572), 0, CGFloat(M_PI * 2)], // Line 2 - Central circle.
-            true: [(marginX + width * 0.099), (rectHeight * 0.5), 1, 0, CGFloat(M_PI * 2)], // Line 5 - Left penalty circle.
-            true: [(marginX + width * 0.099), (rectHeight * 0.5), (height * 0.1572), CGFloat(-M_PI_2 + 0.43), CGFloat(M_PI_2 - 0.43)], // Line 6 - Left arc circle.
-            // true: [(), (), (), 0, CGFloat(M_PI)]
-        ]
-        
-        switch type {
-        case .Football:
-            return (linesDataFootball, circleDataFootball)
-        case .Basketball:
-            return(linesDataBasketball, circleDataBasketball)
-        case .Tennis:
-            return(linesDataTennis, nil)
-        }
-        
+            
+        return generatePath(lines, circles: circles)
     }
     
+    func getTennisFieldPath(width:CGFloat, height: CGFloat, rectWidth:CGFloat, rectHeight:CGFloat, marginX:CGFloat, marginY:CGFloat) -> CGPath {
+        
+        let lines = [[CGPoint(x: marginX, y: marginX), CGPoint(x: width, y: marginX), CGPoint(x: width, y: height - marginX), CGPoint(x: marginX, y: height - marginX), CGPoint(x: marginX, y: marginX)],[CGPoint(x: marginX, y: height * 0.5 - height * 0.3647), CGPoint(x: width, y: height * 0.5 - height * 0.3647)], [CGPoint(x: marginX, y: height * 0.5 + height * 0.3647), CGPoint(x: width, y: height * 0.5 + height * 0.3647)], [CGPoint(x: rectWidth * 0.5, y: marginX), CGPoint(x: rectWidth * 0.5, y: height - marginX)],[CGPoint(x: rectWidth * 0.5 - rectWidth * 0.2607, y: height * 0.5 - height * 0.3647), CGPoint(x: rectWidth * 0.5 - rectWidth * 0.2607, y: height * 0.5 + height * 0.3647)], [CGPoint(x: rectWidth * 0.5 + rectWidth * 0.2607, y: height * 0.5 + height * 0.3647), CGPoint(x: rectWidth * 0.5 + rectWidth * 0.2607, y: height * 0.5 - height * 0.3647)], [CGPoint(x: rectWidth * 0.5 + rectWidth * 0.2607, y: height * 0.5 ), CGPoint(x: rectWidth * 0.5 - rectWidth * 0.2607, y: height * 0.5)]]
+        
+        return generatePath(lines, circles: nil)
+    }
+    
+    func getBasketballFieldPath(width:CGFloat, height: CGFloat, rectWidth:CGFloat, rectHeight:CGFloat, marginX:CGFloat, marginY:CGFloat) -> CGPath {
+        
+        let lines = [[CGPoint]]()
+        
+        return generatePath(lines, circles: nil)
+    }
+    
+    func generatePath(lines:[[CGPoint]]?, circles:[Bool:[CGFloat]]?)->CGPath {
+        
+        let path = UIBezierPath()
+        
+        // Convert points to line paths.
+        if let _ = lines {
+            for line in lines! {
+                var counter = 0
+                let length = line.count
+                for point in line {
+                    let tmpPath = UIBezierPath()
+                    counter += 1
+                    if counter == 1 {
+                        tmpPath.moveToPoint(point)
+                    } else if counter >= length {
+                        tmpPath.addLineToPoint(point)
+                        tmpPath.closePath()
+                        path.appendPath(tmpPath)
+                    } else {
+                        tmpPath.addLineToPoint(point)
+                    }
+                }
+            }
+        }
+        
+        // Convert points to circle path.
+        if let _ = circles {
+            for (reverse, circle) in circles! {
+                if circles!.count >= 5 {
+                    let circlePath = UIBezierPath(
+                        arcCenter: CGPoint(x: circle[0], y: circle[1]),
+                        radius: circle[2],
+                        startAngle: circle[3],
+                        endAngle: circle[4],
+                        clockwise: reverse
+                    )
+                    
+                    path.appendPath(circlePath) // Append circle to path.
+                }
+            }
+        }
+        
+        return path.CGPath
+    }
 }

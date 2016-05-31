@@ -21,6 +21,7 @@
 		2E4892741CF887DE0037187A /* KLIKA_iOS_Naloga_2016UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892731CF887DE0037187A /* KLIKA_iOS_Naloga_2016UITests.swift */; };
 		2E4892831CF8C08E0037187A /* DrawFootballField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892821CF8C08E0037187A /* DrawFootballField.swift */; };
 		2E9725191CFAD14300D8CCCD /* DrawTennisField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */; };
+		2EC01C071CFE1DDE0000BD57 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC01C061CFE1DDE0000BD57 /* Draw.swift */; };
 		2EE62FD01CFCD71700418676 /* DrawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE62FCF1CFCD71700418676 /* DrawData.swift */; };
 		2EE62FD21CFCDFB000418676 /* DrawShapesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE62FD11CFCDFB000418676 /* DrawShapesProtocol.swift */; };
 		2EE62FD51CFCE16A00418676 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE62FD41CFCE16A00418676 /* Data.swift */; };
@@ -64,6 +65,7 @@
 		2E4892751CF887DE0037187A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4892821CF8C08E0037187A /* DrawFootballField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawFootballField.swift; sourceTree = "<group>"; };
 		2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTennisField.swift; sourceTree = "<group>"; };
+		2EC01C061CFE1DDE0000BD57 /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
 		2EE62FCF1CFCD71700418676 /* DrawData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawData.swift; sourceTree = "<group>"; };
 		2EE62FD11CFCDFB000418676 /* DrawShapesProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawShapesProtocol.swift; sourceTree = "<group>"; };
 		2EE62FD41CFCE16A00418676 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				2E381BC81CFA3F9D00665698 /* DrawBasketballField.swift */,
 				2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */,
 				2EE62FCF1CFCD71700418676 /* DrawData.swift */,
+				2EC01C061CFE1DDE0000BD57 /* Draw.swift */,
 			);
 			name = Draw;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EE62FD21CFCDFB000418676 /* DrawShapesProtocol.swift in Sources */,
+				2EC01C071CFE1DDE0000BD57 /* Draw.swift in Sources */,
 				2E0ADFFD1CFB1F6700DBF0BC /* FootballVC.swift in Sources */,
 				2E4892831CF8C08E0037187A /* DrawFootballField.swift in Sources */,
 				2E9725191CFAD14300D8CCCD /* DrawTennisField.swift in Sources */,
