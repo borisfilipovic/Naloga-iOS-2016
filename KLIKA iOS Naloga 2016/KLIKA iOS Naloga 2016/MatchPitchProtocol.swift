@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MatchPitchProtocol {
-    func setResultForHome(home:NSNumber?, andAway:NSNumber?)
+    func setResultForHome(home:NSNumber?, andAway away:NSNumber?)
 }

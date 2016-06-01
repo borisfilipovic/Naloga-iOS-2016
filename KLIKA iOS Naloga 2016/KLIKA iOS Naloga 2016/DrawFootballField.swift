@@ -8,11 +8,9 @@
 
 import UIKit
 
-//class DrawFootballField: UIView {
-
-    // MARK: - Draw field.
-func getFootballFieldContext(context:CGContext, width:CGFloat, height: CGFloat, rectWidth:CGFloat, rectHeight:CGFloat, marginX:CGFloat, marginY:CGFloat) -> CGContext { // Drawing code
-
+struct FootballFieldDatasource:SportTypeDatasourceProtocol {
+    
+    func getDrawFieldDataContext(context: CGContext, width: CGFloat, height: CGFloat, frame: CGSize, marginX: CGFloat, marginY: CGFloat) -> CGContext {
         // Set path - Outline.
         CGContextMoveToPoint(context, marginX, marginX)
         CGContextAddLineToPoint(context, width, marginX)
@@ -21,12 +19,12 @@ func getFootballFieldContext(context:CGContext, width:CGFloat, height: CGFloat, 
         CGContextAddLineToPoint(context, marginX, marginX)
         
         // Line 1 - Center line.
-        CGContextMoveToPoint(context, rectWidth * 0.5, marginX)
-        CGContextAddLineToPoint(context, rectWidth * 0.5, height - marginX)
+        CGContextMoveToPoint(context, frame.width * 0.5, marginX)
+        CGContextAddLineToPoint(context, frame.width * 0.5, height - marginX)
         
         // Line 2 - Center circle.
         let circlePath = UIBezierPath(
-            arcCenter: CGPoint(x:rectWidth * 0.5,y:height * 0.5),
+            arcCenter: CGPoint(x:frame.width * 0.5,y:height * 0.5),
             radius: CGFloat( height * 0.1572),
             startAngle: CGFloat(0),
             endAngle:CGFloat(M_PI * 2),
@@ -35,20 +33,20 @@ func getFootballFieldContext(context:CGContext, width:CGFloat, height: CGFloat, 
         
         /****** LEFT SIDE *******/
         // Line 3 - left outter goal square.
-        CGContextMoveToPoint(context, marginX, rectHeight * 0.5 - rectHeight * 0.3)
-        CGContextAddLineToPoint(context, marginX + width * 0.13, rectHeight * 0.5 - rectHeight * 0.3)
-        CGContextAddLineToPoint(context, marginX + width * 0.13, rectHeight * 0.5 + rectHeight * 0.3)
-        CGContextAddLineToPoint(context, marginX, rectHeight * 0.5 + rectHeight * 0.3)
+        CGContextMoveToPoint(context, marginX, frame.height * 0.5 - frame.height * 0.3)
+        CGContextAddLineToPoint(context, marginX + width * 0.13, frame.height * 0.5 - frame.height * 0.3)
+        CGContextAddLineToPoint(context, marginX + width * 0.13, frame.height * 0.5 + frame.height * 0.3)
+        CGContextAddLineToPoint(context, marginX, frame.height * 0.5 + frame.height * 0.3)
         
         // Line 4 - left inner goal square.
-        CGContextMoveToPoint(context, marginX, rectHeight * 0.5 - rectHeight * 0.15)
-        CGContextAddLineToPoint(context, marginX + width * 0.068, rectHeight * 0.5 - rectHeight * 0.15)
-        CGContextAddLineToPoint(context, marginX + width * 0.068, rectHeight * 0.5 + rectHeight * 0.15)
-        CGContextAddLineToPoint(context, marginX, rectHeight * 0.5 + rectHeight * 0.15)
+        CGContextMoveToPoint(context, marginX, frame.height * 0.5 - frame.height * 0.15)
+        CGContextAddLineToPoint(context, marginX + width * 0.068, frame.height * 0.5 - frame.height * 0.15)
+        CGContextAddLineToPoint(context, marginX + width * 0.068, frame.height * 0.5 + frame.height * 0.15)
+        CGContextAddLineToPoint(context, marginX, frame.height * 0.5 + frame.height * 0.15)
         
         // Line 5 - Left penalty circle.
         let circlePath1 = UIBezierPath(
-            arcCenter: CGPoint(x:marginX + width * 0.099, y:rectHeight * 0.5),
+            arcCenter: CGPoint(x:marginX + width * 0.099, y:frame.height * 0.5),
             radius: CGFloat(1),
             startAngle: CGFloat(0),
             endAngle:CGFloat(M_PI * 2),
@@ -57,7 +55,7 @@ func getFootballFieldContext(context:CGContext, width:CGFloat, height: CGFloat, 
         
         // Line 6 - Left arc circle.
         let circlePath2 = UIBezierPath(
-            arcCenter: CGPoint(x:marginX + width * 0.099, y:rectHeight * 0.5),
+            arcCenter: CGPoint(x:marginX + width * 0.099, y:frame.height * 0.5),
             radius: CGFloat( height * 0.1572),
             startAngle: CGFloat(-M_PI_2 + 0.43),
             endAngle:CGFloat(M_PI_2 - 0.43),
@@ -66,20 +64,20 @@ func getFootballFieldContext(context:CGContext, width:CGFloat, height: CGFloat, 
         
         /****** RIGHT SIDE *******/
         // Line 7 - Right outter goal square.
-        CGContextMoveToPoint(context, width, rectHeight * 0.5 - rectHeight * 0.3)
-        CGContextAddLineToPoint(context, width - width * 0.13, rectHeight * 0.5 - rectHeight * 0.3)
-        CGContextAddLineToPoint(context, width - width * 0.13, rectHeight * 0.5 + rectHeight * 0.3)
-        CGContextAddLineToPoint(context, width, rectHeight * 0.5 + rectHeight * 0.3)
+        CGContextMoveToPoint(context, width, frame.height * 0.5 - frame.height * 0.3)
+        CGContextAddLineToPoint(context, width - width * 0.13, frame.height * 0.5 - frame.height * 0.3)
+        CGContextAddLineToPoint(context, width - width * 0.13, frame.height * 0.5 + frame.height * 0.3)
+        CGContextAddLineToPoint(context, width, frame.height * 0.5 + frame.height * 0.3)
         
         // Line 8 - right inner goal square.
-        CGContextMoveToPoint(context, width, rectHeight * 0.5 - rectHeight * 0.15)
-        CGContextAddLineToPoint(context, width - width * 0.068, rectHeight * 0.5 - rectHeight * 0.15)
-        CGContextAddLineToPoint(context, width - width * 0.068, rectHeight * 0.5 + rectHeight * 0.15)
-        CGContextAddLineToPoint(context, width, rectHeight * 0.5 + rectHeight * 0.15)
+        CGContextMoveToPoint(context, width, frame.height * 0.5 - frame.height * 0.15)
+        CGContextAddLineToPoint(context, width - width * 0.068, frame.height * 0.5 - frame.height * 0.15)
+        CGContextAddLineToPoint(context, width - width * 0.068, frame.height * 0.5 + frame.height * 0.15)
+        CGContextAddLineToPoint(context, width, frame.height * 0.5 + frame.height * 0.15)
         
         // Line 9 - Right penalty circle.
         let circlePath3 = UIBezierPath(
-            arcCenter: CGPoint(x:width - width * 0.099, y:rectHeight * 0.5),
+            arcCenter: CGPoint(x:width - width * 0.099, y:frame.height * 0.5),
             radius: CGFloat(1),
             startAngle: CGFloat(0),
             endAngle:CGFloat(M_PI * 2),
@@ -88,13 +86,14 @@ func getFootballFieldContext(context:CGContext, width:CGFloat, height: CGFloat, 
         
         // Line 10 - Right arc circle.
         let circlePath4 = UIBezierPath(
-            arcCenter: CGPoint(x:width - width * 0.099, y:rectHeight * 0.5),
+            arcCenter: CGPoint(x:width - width * 0.099, y:frame.height * 0.5),
             radius: CGFloat( height * 0.1572),
             startAngle: CGFloat(M_PI_4 + 1.25),
             endAngle:CGFloat(-M_PI_2 - 0.45),
             clockwise: true)
         CGContextAddPath(context, circlePath4.CGPath)
-
+        
         // Return path.
         return context
+    }
 }

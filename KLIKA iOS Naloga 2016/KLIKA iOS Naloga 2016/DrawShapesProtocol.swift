@@ -9,12 +9,11 @@
 import UIKit
 
 protocol DrawShapesProtocol {
-    var height:CGFloat{get set}
-    var width: CGFloat{get set}
-    var rectWidth:CGFloat{get set}
-    var rectHeight:CGFloat{get set}
-    var marginX:CGFloat{get set}
-    var marginY:CGFloat{get set}
+    var sportType: SportTypes? {get set}
+    var size: CGSize? {get set} // height, width
+    var rect: CGSize? {get set} // rectHeight, rectWidth
+    var margin: CGSize? {get set} // marginX marginY
     
-    func getPath(forSportType selector:SportTypes)->CGPath
+    init(sportType:SportTypes, size: CGSize, frame: CGRect, margin: CGSize)
+    func getPath(forSportType selector:SportTypes, andContext context:CGContext)->CGContext
 }

@@ -19,9 +19,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
     var activeField: UITextField?
     
     // Sport types.
-    var footballVC:FootballCV?
-    var basketballVC:BasketballVC?
-    var tennisVC:TennisVC?
+//    var footballVC:FootballCV?
+//    var basketballVC:BasketballVC?
+//    var tennisVC:TennisVC?
 
     //var sportTypeVC:UIViewController?
     //var drawView:UIView?
@@ -131,21 +131,21 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }
         
         resetScore()
-        
-        switch _type {
-        case .Basketball:
-            basketballVC = BasketballVC()
-            basketballVC?.configureViewController(self)
-            parentView = basketballVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.42 + 30))
-        case .Football:
-            footballVC = FootballCV()
-            footballVC?.configureViewController(self)
-            parentView = footballVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.4175 + 30))
-        case .Tennis:
-            tennisVC = TennisVC()
-            tennisVC?.configureViewController(self)
-            parentView = tennisVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.5))
-        }
+        parentView = SportFieldView(sportType: .Tennis, size: CGSize(width: 10, height: 10), frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.5), margin: CGSize(width: 10, height: 10))
+//        switch _type {
+//        case .Basketball:
+//            basketballVC = BasketballVC()
+//            basketballVC?.configureViewController(self)
+//            parentView = basketballVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.42 + 30))
+//        case .Football:
+//            footballVC = FootballCV()
+//            footballVC?.configureViewController(self)
+//            parentView = footballVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.4175 + 30))
+//        case .Tennis:
+//            tennisVC = TennisVC()
+//            tennisVC?.configureViewController(self)
+//            parentView = tennisVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.5))
+//        }
         
         //if let _ = parentView {view.addSubview(parentView!)}
         if let _ = parentView {scrollView?.addSubview(parentView!)}
