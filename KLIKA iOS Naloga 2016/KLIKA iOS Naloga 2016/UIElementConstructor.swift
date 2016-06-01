@@ -35,6 +35,4 @@ struct GUIConstructor {
         
         return button
     }
-    
-    //func createUI(vc:ViewController, frame:CGRect)->
 }

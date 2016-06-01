@@ -21,8 +21,7 @@ struct TennisFieldDatasource:SportTypeDatasourceProtocol {
         let width = ((frame.width * 99) / 100)
         let height = frame.height
         let marginX = CalcWidth(fromBaseRectWidth: frame.width, fromPercentage: 1)
-        
-        
+                
         // Set path - Outline.
         CGContextMoveToPoint(context, marginX, marginX)
         CGContextAddLineToPoint(context, width, marginX)

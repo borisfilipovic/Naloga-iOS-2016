@@ -22,5 +22,4 @@ struct HelperMethods {
         }
         return nil
     }
-    
 }

@@ -55,9 +55,7 @@ struct BasketballFieldDatasource:SportTypeDatasourceProtocol {
             endAngle:CGFloat(M_PI_2),
             clockwise: true)
         CGContextAddPath(context, circlePathLeft.CGPath)
-        
-        
-        
+
         // Inner line.
         CGContextMoveToPoint(context, marginX, frame.height * 0.5 - frame.height * 0.165)
         CGContextAddLineToPoint(context, CalcWidth(fromBaseRectWidth: width, fromPercentage: 20.76), frame.height * 0.5 - frame.height * 0.165)

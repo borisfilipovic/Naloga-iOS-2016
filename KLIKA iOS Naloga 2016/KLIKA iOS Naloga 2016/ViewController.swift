@@ -79,7 +79,6 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewControllerProto
         if let _ = parentView {scrollView?.addSubview(parentView!)}
     }
     
-    // MARK: - UITextField delegate function.
     func textFieldDidEndEditing(textField: UITextField) {
         scrollView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         storeScore(home: helperUtil.convertStringToNSNumber(inputTextField1.text), andAway: helperUtil.convertStringToNSNumber(inputTextField2.text))
@@ -97,13 +96,11 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewControllerProto
         return string.rangeOfCharacterFromSet(invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
     }
     
-    // MARK: - Handle and store score.
     func storeScore(home _home:NSNumber?, andAway _away:NSNumber?){
         if let _ = _home where homeCurrentScore.integerValue < _home!.integerValue {homeCurrentScore = _home!}
         if let _ = _away where awayCurrentScore.integerValue < _away?.integerValue {awayCurrentScore = _away!}
     }
     
-    // MARK: - Reset score.
     func resetScore(){
         homeCurrentScore = 0
         awayCurrentScore = 0
@@ -111,6 +108,5 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewControllerProto
         inputTextField2.text = "\(0)"
     }
     
-    // MARK: - Send data.
     func sendData(){delegate?.setResultForHome(homeCurrentScore, andAway: awayCurrentScore)}
 }

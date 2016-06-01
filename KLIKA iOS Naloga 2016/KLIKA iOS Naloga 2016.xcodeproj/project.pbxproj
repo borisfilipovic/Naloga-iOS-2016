@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E0ADFFD1CFB1F6700DBF0BC /* FootballVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADFFC1CFB1F6700DBF0BC /* FootballVC.swift */; };
-		2E0ADFFF1CFB356400DBF0BC /* BasketballVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADFFE1CFB356400DBF0BC /* BasketballVC.swift */; };
-		2E0AE0011CFB35BB00DBF0BC /* TennisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0AE0001CFB35BB00DBF0BC /* TennisVC.swift */; };
 		2E0AE0041CFB6AE400DBF0BC /* MatchPitchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0AE0031CFB6AE400DBF0BC /* MatchPitchProtocol.swift */; };
 		2E381BC91CFA3F9D00665698 /* DrawBasketballField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E381BC81CFA3F9D00665698 /* DrawBasketballField.swift */; };
 		2E4892541CF887DE0037187A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892531CF887DE0037187A /* AppDelegate.swift */; };
@@ -22,7 +19,6 @@
 		2E4892831CF8C08E0037187A /* DrawFootballField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4892821CF8C08E0037187A /* DrawFootballField.swift */; };
 		2E9725191CFAD14300D8CCCD /* DrawTennisField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */; };
 		2EE62FD21CFCDFB000418676 /* DrawShapesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE62FD11CFCDFB000418676 /* DrawShapesProtocol.swift */; };
-		2EE62FD51CFCE16A00418676 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE62FD41CFCE16A00418676 /* Data.swift */; };
 		2EE644DE1CFF414800513D7F /* SportTypeDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE644DD1CFF414800513D7F /* SportTypeDatasourceProtocol.swift */; };
 		2EE644E11CFF440600513D7F /* SportFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE644E01CFF440600513D7F /* SportFieldView.swift */; };
 		2EE644E41CFF572000513D7F /* UIElementConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE644E31CFF572000513D7F /* UIElementConstructor.swift */; };
@@ -48,9 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E0ADFFC1CFB1F6700DBF0BC /* FootballVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballVC.swift; sourceTree = "<group>"; };
-		2E0ADFFE1CFB356400DBF0BC /* BasketballVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballVC.swift; sourceTree = "<group>"; };
-		2E0AE0001CFB35BB00DBF0BC /* TennisVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TennisVC.swift; sourceTree = "<group>"; };
 		2E0AE0031CFB6AE400DBF0BC /* MatchPitchProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchPitchProtocol.swift; sourceTree = "<group>"; };
 		2E381BC81CFA3F9D00665698 /* DrawBasketballField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawBasketballField.swift; sourceTree = "<group>"; };
 		2E4892501CF887DE0037187A /* KLIKA iOS Naloga 2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KLIKA iOS Naloga 2016.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +62,6 @@
 		2E4892821CF8C08E0037187A /* DrawFootballField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawFootballField.swift; sourceTree = "<group>"; };
 		2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTennisField.swift; sourceTree = "<group>"; };
 		2EE62FD11CFCDFB000418676 /* DrawShapesProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawShapesProtocol.swift; sourceTree = "<group>"; };
-		2EE62FD41CFCE16A00418676 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2EE644DD1CFF414800513D7F /* SportTypeDatasourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportTypeDatasourceProtocol.swift; sourceTree = "<group>"; };
 		2EE644E01CFF440600513D7F /* SportFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportFieldView.swift; sourceTree = "<group>"; };
 		2EE644E31CFF572000513D7F /* UIElementConstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIElementConstructor.swift; sourceTree = "<group>"; };
@@ -102,16 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E0ADFFB1CFB1F4E00DBF0BC /* Sport Fields VC */ = {
-			isa = PBXGroup;
-			children = (
-				2E0ADFFC1CFB1F6700DBF0BC /* FootballVC.swift */,
-				2E0ADFFE1CFB356400DBF0BC /* BasketballVC.swift */,
-				2E0AE0001CFB35BB00DBF0BC /* TennisVC.swift */,
-			);
-			name = "Sport Fields VC";
-			sourceTree = "<group>";
-		};
 		2E0AE0021CFB6ABE00DBF0BC /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,9 +131,7 @@
 				2EE644E51CFF76ED00513D7F /* Utility */,
 				2EE644E21CFF56F800513D7F /* UI elements */,
 				2EE644DF1CFF43DB00513D7F /* Sport Field View */,
-				2EE62FD31CFCE15D00418676 /* Data */,
 				2E0AE0021CFB6ABE00DBF0BC /* Protocol */,
-				2E0ADFFB1CFB1F4E00DBF0BC /* Sport Fields VC */,
 				2E4892811CF8C05E0037187A /* Draw */,
 				2E4892531CF887DE0037187A /* AppDelegate.swift */,
 				2E4892551CF887DE0037187A /* ViewController.swift */,
@@ -189,14 +169,6 @@
 				2E9725181CFAD14300D8CCCD /* DrawTennisField.swift */,
 			);
 			name = Draw;
-			sourceTree = "<group>";
-		};
-		2EE62FD31CFCE15D00418676 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				2EE62FD41CFCE16A00418676 /* Data.swift */,
-			);
-			name = Data;
 			sourceTree = "<group>";
 		};
 		2EE644DF1CFF43DB00513D7F /* Sport Field View */ = {
@@ -355,16 +327,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EE62FD21CFCDFB000418676 /* DrawShapesProtocol.swift in Sources */,
-				2E0ADFFD1CFB1F6700DBF0BC /* FootballVC.swift in Sources */,
 				2EE644E41CFF572000513D7F /* UIElementConstructor.swift in Sources */,
 				2EE644DE1CFF414800513D7F /* SportTypeDatasourceProtocol.swift in Sources */,
 				2E4892831CF8C08E0037187A /* DrawFootballField.swift in Sources */,
 				2EE644E11CFF440600513D7F /* SportFieldView.swift in Sources */,
 				2E9725191CFAD14300D8CCCD /* DrawTennisField.swift in Sources */,
-				2E0ADFFF1CFB356400DBF0BC /* BasketballVC.swift in Sources */,
 				2E4892561CF887DE0037187A /* ViewController.swift in Sources */,
-				2E0AE0011CFB35BB00DBF0BC /* TennisVC.swift in Sources */,
-				2EE62FD51CFCE16A00418676 /* Data.swift in Sources */,
 				2EE644E91CFF787E00513D7F /* ViewControllerProtocol.swift in Sources */,
 				2E0AE0041CFB6AE400DBF0BC /* MatchPitchProtocol.swift in Sources */,
 				2E4892541CF887DE0037187A /* AppDelegate.swift in Sources */,
