@@ -41,6 +41,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
     var homeCurrentScore:NSNumber = 0
     var awayCurrentScore:NSNumber = 0
     
+    // GUI constructor.
+    let constructor = GUIConstructor()
+    
     // Protocol delegate.
     var delegate:MatchPitchProtocol?
 
@@ -77,21 +80,13 @@ class ViewController: UIViewController, UITextFieldDelegate{
         let marginX:CGFloat = 10
         
         // 4.Left input text field.
-        inputTextField1 = UITextField(frame: CGRect(origin: CGPoint(x: marginX, y: view.bounds.size.height - textFieldSize.height  - 20), size: CGSize(width: textFieldSize.width, height: textFieldSize.height)))
-        inputTextField1.tag = 1
+        inputTextField1 = constructor.getTextField(CGRect(origin: CGPoint(x: marginX, y: view.bounds.size.height - textFieldSize.height  - 20), size: CGSize(width: textFieldSize.width, height: textFieldSize.height)), tag: 1, color: UIColor.redColor())
         inputTextField1.delegate = self
-        inputTextField1.textAlignment = .Center
-        inputTextField1.keyboardType = .NumberPad
-        inputTextField1.backgroundColor = UIColor.redColor()
         scrollView?.addSubview(inputTextField1)
         
         // 5. Right input text field.
-        inputTextField2 = UITextField(frame: CGRect(origin: CGPoint(x: view.bounds.size.width - textFieldSize.width - marginX, y: view.bounds.size.height - textFieldSize.height - 20), size: CGSize(width: textFieldSize.width, height: textFieldSize.height)))
-        inputTextField2.tag = 2
+        inputTextField2 = constructor.getTextField(CGRect(origin: CGPoint(x: view.bounds.size.width - textFieldSize.width - marginX, y: view.bounds.size.height - textFieldSize.height - 20), size: CGSize(width: textFieldSize.width, height: textFieldSize.height)), tag: 2, color: UIColor.whiteColor())
         inputTextField2.delegate = self
-        inputTextField2.textAlignment = .Center
-        inputTextField2.keyboardType = .NumberPad
-        inputTextField2.backgroundColor = UIColor.whiteColor()
         scrollView?.addSubview(inputTextField2)
         
         // 6. Set score button.
