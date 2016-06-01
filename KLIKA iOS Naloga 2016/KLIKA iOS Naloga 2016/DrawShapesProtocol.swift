@@ -10,10 +10,14 @@ import UIKit
 
 protocol DrawShapesProtocol {
     var sportType: SportTypes? {get set}
-    var size: CGSize? {get set} // height, width
-    var rect: CGSize? {get set} // rectHeight, rectWidth
-    var margin: CGSize? {get set} // marginX marginY
-    
+    var size: CGSize? {get set}
+    var rect: CGSize? {get set}
+    var margin: CGSize? {get set}
+    var homeCurrentScore:NSNumber? {get set}
+    var awayCurrentScore:NSNumber? {get set}
+    var homeOldScore:NSNumber? {get set}
+    var awayOldScore:NSNumber? {get set}
+
     init(sportType:SportTypes, size: CGSize, frame: CGRect, margin: CGSize)
     func getPath(forSportType selector:SportTypes, andContext context:CGContext)->CGContext
 }

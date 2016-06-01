@@ -63,8 +63,8 @@ struct FootballFieldDatasource:SportTypeDatasourceProtocol {
         let circlePath2 = UIBezierPath(
             arcCenter: CGPoint(x:marginX + width * 0.099, y:frame.height * 0.5),
             radius: CGFloat( height * 0.1572),
-            startAngle: CGFloat(-M_PI_2 + 0.43),
-            endAngle:CGFloat(M_PI_2 - 0.43),
+            startAngle: CGFloat(-M_PI_2 + 0.4),
+            endAngle:CGFloat(M_PI_2 - 0.4),
             clockwise: true)
         CGContextAddPath(context, circlePath2.CGPath)
         
@@ -94,8 +94,8 @@ struct FootballFieldDatasource:SportTypeDatasourceProtocol {
         let circlePath4 = UIBezierPath(
             arcCenter: CGPoint(x:width - width * 0.099, y:frame.height * 0.5),
             radius: CGFloat( height * 0.1572),
-            startAngle: CGFloat(M_PI_4 + 1.25),
-            endAngle:CGFloat(-M_PI_2 - 0.45),
+            startAngle: CGFloat(M_PI_4 + 1.18),
+            endAngle:CGFloat(-M_PI_2 - 0.4),
             clockwise: true)
         CGContextAddPath(context, circlePath4.CGPath)
         

@@ -8,99 +8,52 @@
 
 import UIKit
 
-enum SportTypes {
-    case Football
-    case Basketball
-    case Tennis
-}
-
-class ViewController: UIViewController, UITextFieldDelegate{
+class ViewController: UIViewController, UITextFieldDelegate, ViewControllerProtocol{
     
-    var activeField: UITextField?
-    
-    // Sport types.
-//    var footballVC:FootballCV?
-//    var basketballVC:BasketballVC?
-//    var tennisVC:TennisVC?
-
-    //var sportTypeVC:UIViewController?
-    //var drawView:UIView?
-    var parentView:UIView?
+    var parentView:SportFieldView?
     var scrollView:UIScrollView?
     var segmentedControll:UISegmentedControl?
     var scoreLabel = UILabel()
-    
-    // Text fields.
     var inputTextField1 = UITextField()
     var inputTextField2 = UITextField()
-    
-    // Gesture recognizer.
-    var tapRecognize:UITapGestureRecognizer?
-    
-    // Score variables.
+    var tapRecognize:UITapGestureRecognizer? // Gesture recognizer.
+    let constructor = GUIConstructor() // GUI constructor.
+    let helperUtil = HelperMethods()
+    var delegate:MatchPitchProtocol? // Protocol delegate.
     var homeCurrentScore:NSNumber = 0
     var awayCurrentScore:NSNumber = 0
-    
-    // GUI constructor.
-    let constructor = GUIConstructor()
-    
-    // Protocol delegate.
-    var delegate:MatchPitchProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Initial setup.
-        createScrollView() // Create scroll view.
-        createSegmentedControll() // Create segmented controlls.
-        createTextFields() // Create text fields.
-        createGestureRecognizer() // Create gesture recognizer.
-        handleDraw(SportTypes.Football, height: UIScreen.mainScreen().bounds.width * 0.4175 + 30) // Draw initial field.
-        view.backgroundColor = UIColor.blueColor() // Background color.
+        createView()
+        handleDraw(SportTypes.Football, height: UIScreen.mainScreen().bounds.width * 0.4175 + 30)
     }
     
-    func createScrollView(){
+    func createView() {
         scrollView = UIScrollView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: view.bounds.size))
         view.addSubview(scrollView!)
-    }
     
-    func createSegmentedControll(){
-        let segmentedControllElements = ["Football", "Basketball", "Tennis"]
-        segmentedControll = UISegmentedControl(items: segmentedControllElements)
-        segmentedControll?.center = CGPoint(x: UIScreen.mainScreen().bounds.width * 0.5, y: 60)
-        segmentedControll?.selectedSegmentIndex = 0
+        segmentedControll = constructor.getSegmentedControll(["Football", "Basketball", "Tennis"], center: CGPoint(x: UIScreen.mainScreen().bounds.width * 0.5, y: 60))
         segmentedControll?.addTarget(self, action: #selector(ViewController.segmentChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         scrollView?.addSubview(segmentedControll!)
-    }
-    
-    func createTextFields(){
-        // 3. Create UITextField.
-        let textFieldSize = CGSize(width: 50, height: 50)
-        let setScoreButtonSize = CGSize(width: 120, height: 50)
-        let marginX:CGFloat = 10
         
-        // 4.Left input text field.
-        inputTextField1 = constructor.getTextField(CGRect(origin: CGPoint(x: marginX, y: view.bounds.size.height - textFieldSize.height  - 20), size: CGSize(width: textFieldSize.width, height: textFieldSize.height)), tag: 1, color: UIColor.redColor())
+        inputTextField1 = constructor.getTextField(CGRect(origin: CGPoint(x: 10, y: view.bounds.size.height - 70), size: CGSize(width: 50, height: 50)), tag: 1, color: UIColor.redColor())
         inputTextField1.delegate = self
         scrollView?.addSubview(inputTextField1)
         
-        // 5. Right input text field.
-        inputTextField2 = constructor.getTextField(CGRect(origin: CGPoint(x: view.bounds.size.width - textFieldSize.width - marginX, y: view.bounds.size.height - textFieldSize.height - 20), size: CGSize(width: textFieldSize.width, height: textFieldSize.height)), tag: 2, color: UIColor.whiteColor())
+        inputTextField2 = constructor.getTextField(CGRect(origin: CGPoint(x: view.bounds.size.width - 60, y: view.bounds.size.height - 70), size: CGSize(width: 50, height: 50)), tag: 2, color: UIColor.whiteColor())
         inputTextField2.delegate = self
         scrollView?.addSubview(inputTextField2)
         
-        // 6. Set score button.
-        let setScoreButton = UIButton(frame: CGRect(origin: CGPoint(x: view.bounds.size.width * 0.5 - setScoreButtonSize.width * 0.5, y: view.bounds.size.height - setScoreButtonSize.height  - 20), size: CGSize(width: setScoreButtonSize.width, height: setScoreButtonSize.height)))
-        setScoreButton.setTitle("Set score", forState: .Normal)
-        setScoreButton.backgroundColor = UIColor.greenColor()
+        let setScoreButton = constructor.getButton(CGRect(origin: CGPoint(x: view.bounds.size.width * 0.5 - 120 * 0.5, y: view.bounds.size.height - 50  - 20), size: CGSize(width:120, height:50)), title: "Set score", color: UIColor.greenColor())
         setScoreButton.addTarget(self, action: #selector(ViewController.sendData), forControlEvents: UIControlEvents.TouchUpInside)
         scrollView?.addSubview(setScoreButton)
-    }
-    
-    func createGestureRecognizer(){
+        
         tapRecognize = UITapGestureRecognizer()
         tapRecognize!.addTarget(self, action: #selector(ViewController.didTapView))
         view.addGestureRecognizer(tapRecognize!)
+        
+        view.backgroundColor = UIColor.blueColor() // Background color.
     }
     
     func didTapView(){view.endEditing(true)}
@@ -115,7 +68,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
         case 2:
             handleDraw(.Tennis, height: UIScreen.mainScreen().bounds.width * 0.5)
         default:
-            print("Segmented controll button sent unknow value")
             break
         }
     }
@@ -123,28 +75,17 @@ class ViewController: UIViewController, UITextFieldDelegate{
     func handleDraw(_type: SportTypes, height: CGFloat){
         if let _ = parentView {parentView!.removeFromSuperview()} // Remove old view.
         parentView = SportFieldView(sportType: _type, size: CGSize(width: 10, height: 10), frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: height), margin: CGSize(width: 10, height: 10))
+        parentView?.setDelegate(self)
         if let _ = parentView {scrollView?.addSubview(parentView!)}
     }
     
     // MARK: - UITextField delegate function.
     func textFieldDidEndEditing(textField: UITextField) {
-        scrollView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)        
-        if textField.tag == 1 {
-            storeScore(home: convertStringToNSNumber(inputTextField1.text), andAway: nil)
-        } else if textField.tag == 2 {
-            storeScore(home: nil, andAway: convertStringToNSNumber(inputTextField2.text))
-        }
+        scrollView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        storeScore(home: helperUtil.convertStringToNSNumber(inputTextField1.text), andAway: helperUtil.convertStringToNSNumber(inputTextField2.text))
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        scrollView?.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
-    }
-    
-    // MARK: - Handle and store score.
-    func storeScore(home _home:NSNumber?, andAway _away:NSNumber?){
-        if let _ = _home where homeCurrentScore.integerValue < _home!.integerValue {homeCurrentScore = _home!}
-        if let _ = _away where awayCurrentScore.integerValue < _away?.integerValue {awayCurrentScore = _away!}
-    }
+    func textFieldDidBeginEditing(textField: UITextField) {scrollView?.setContentOffset(CGPoint(x: 0, y: 250), animated: true)}
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -154,6 +95,12 @@ class ViewController: UIViewController, UITextFieldDelegate{
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let invalidCharacters = NSCharacterSet(charactersInString: "0123456789").invertedSet
         return string.rangeOfCharacterFromSet(invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
+    }
+    
+    // MARK: - Handle and store score.
+    func storeScore(home _home:NSNumber?, andAway _away:NSNumber?){
+        if let _ = _home where homeCurrentScore.integerValue < _home!.integerValue {homeCurrentScore = _home!}
+        if let _ = _away where awayCurrentScore.integerValue < _away?.integerValue {awayCurrentScore = _away!}
     }
     
     // MARK: - Reset score.
@@ -166,13 +113,4 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     // MARK: - Send data.
     func sendData(){delegate?.setResultForHome(homeCurrentScore, andAway: awayCurrentScore)}
-    
-    // MARK: - Convert String to NSNumber.
-    func convertStringToNSNumber(_string: String?) -> NSNumber? {
-        if let _ = _string where !_string!.isEmpty {
-            return NSNumber(integer: Int(_string!)!)
-        }
-        
-        return nil
-    }
 }

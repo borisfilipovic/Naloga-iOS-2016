@@ -20,8 +20,21 @@ struct GUIConstructor {
         return textField
     }
     
-//    func getGUI(size: CGSize) -> UIScrollView {
-//        let scrollView = UIScrollView()
-//    }
+    func getSegmentedControll(elements:[String], center: CGPoint) -> UISegmentedControl{
+        let segmentedControll = UISegmentedControl(items: elements)
+        segmentedControll.center = center
+        segmentedControll.selectedSegmentIndex = 0
+        
+        return segmentedControll
+    }
     
+    func getButton(frame:CGRect, title:String, color:UIColor)->UIButton{
+        let button = UIButton(frame: frame)
+        button.setTitle(title, forState: .Normal)
+        button.backgroundColor = color
+        
+        return button
+    }
+    
+    //func createUI(vc:ViewController, frame:CGRect)->
 }
