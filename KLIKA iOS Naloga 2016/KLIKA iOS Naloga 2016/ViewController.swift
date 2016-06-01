@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         createSegmentedControll() // Create segmented controlls.
         createTextFields() // Create text fields.
         createGestureRecognizer() // Create gesture recognizer.
-        handleDraw(SportTypes.Football) // Draw initial field.
+        handleDraw(SportTypes.Football, height: UIScreen.mainScreen().bounds.width * 0.4175 + 30) // Draw initial field.
         view.backgroundColor = UIColor.blueColor() // Background color.
     }
     
@@ -111,43 +111,23 @@ class ViewController: UIViewController, UITextFieldDelegate{
     func didTapView(){view.endEditing(true)}
     
     func segmentChanged(paramSender: UISegmentedControl){
+        resetScore() // Reset score.
         switch paramSender.selectedSegmentIndex {
         case 0:
-            handleDraw(.Football)
+            handleDraw(.Football, height: UIScreen.mainScreen().bounds.width * 0.4175 + 30)
         case 1:
-            handleDraw(.Basketball)
+            handleDraw(.Basketball, height: UIScreen.mainScreen().bounds.width * 0.42 + 30)
         case 2:
-            handleDraw(.Tennis)
+            handleDraw(.Tennis, height: UIScreen.mainScreen().bounds.width * 0.5)
         default:
             print("Segmented controll button sent unknow value")
             break
         }
     }
 
-    func handleDraw(_type: SportTypes){
-        if let _ = parentView {
-            parentView!.removeFromSuperview() // Remove old view.
-            parentView = nil
-        }
-        
-        resetScore()
-        parentView = SportFieldView(sportType: .Tennis, size: CGSize(width: 10, height: 10), frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.5), margin: CGSize(width: 10, height: 10))
-//        switch _type {
-//        case .Basketball:
-//            basketballVC = BasketballVC()
-//            basketballVC?.configureViewController(self)
-//            parentView = basketballVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.42 + 30))
-//        case .Football:
-//            footballVC = FootballCV()
-//            footballVC?.configureViewController(self)
-//            parentView = footballVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.4175 + 30))
-//        case .Tennis:
-//            tennisVC = TennisVC()
-//            tennisVC?.configureViewController(self)
-//            parentView = tennisVC?.initUIView(frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.5))
-//        }
-        
-        //if let _ = parentView {view.addSubview(parentView!)}
+    func handleDraw(_type: SportTypes, height: CGFloat){
+        if let _ = parentView {parentView!.removeFromSuperview()} // Remove old view.
+        parentView = SportFieldView(sportType: _type, size: CGSize(width: 10, height: 10), frame: CGRect(x: 0, y: 100, width: UIScreen.mainScreen().bounds.width, height: height), margin: CGSize(width: 10, height: 10))
         if let _ = parentView {scrollView?.addSubview(parentView!)}
     }
     

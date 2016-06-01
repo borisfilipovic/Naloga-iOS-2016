@@ -10,7 +10,13 @@ import UIKit
 
 struct FootballFieldDatasource:SportTypeDatasourceProtocol {
     
-    func getDrawFieldDataContext(context: CGContext, width: CGFloat, height: CGFloat, frame: CGSize, marginX: CGFloat, marginY: CGFloat) -> CGContext {
+    func getDrawFieldDataContext(context: CGContext, frame: CGSize) -> CGContext {
+        
+        // Variables.
+        let width = ((frame.width * 98) / 100)
+        let height = frame.height
+        let marginX =  (frame.width * 2) / 100
+
         // Set path - Outline.
         CGContextMoveToPoint(context, marginX, marginX)
         CGContextAddLineToPoint(context, width, marginX)
@@ -95,5 +101,9 @@ struct FootballFieldDatasource:SportTypeDatasourceProtocol {
         
         // Return path.
         return context
+    }
+    
+    func CalcWidth(fromBaseRectWidth _width: CGFloat, fromPercentage: CGFloat)->CGFloat{
+        return ((_width * fromPercentage) / 100)
     }
 }

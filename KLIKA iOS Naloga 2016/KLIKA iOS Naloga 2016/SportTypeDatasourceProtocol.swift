@@ -9,5 +9,5 @@
 import UIKit
 
 protocol SportTypeDatasourceProtocol {
-    func getDrawFieldDataContext(context:CGContext, width:CGFloat, height: CGFloat, frame:CGSize, marginX:CGFloat, marginY:CGFloat) -> CGContext
+    func getDrawFieldDataContext(context:CGContext,frame:CGSize) -> CGContext
 }

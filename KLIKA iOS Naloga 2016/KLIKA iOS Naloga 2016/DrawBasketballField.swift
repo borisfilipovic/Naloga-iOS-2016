@@ -10,30 +10,25 @@ import UIKit
 
 struct BasketballFieldDatasource:SportTypeDatasourceProtocol {
     
-    func getDrawFieldDataContext(context: CGContext, width: CGFloat, height: CGFloat, frame: CGSize, marginX: CGFloat, marginY: CGFloat) -> CGContext {
+    func getDrawFieldDataContext(context: CGContext, frame: CGSize) -> CGContext {
         
-//        // Prepare "paint brush".
-//        let context = UIGraphicsGetCurrentContext() // Context is the object used for drawing.
-//        CGContextSetLineWidth(context, 1.0) // Set line width.
-//        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor) // Set color.
-//        
-//        // Main width and margins.
-//        let width = CalcWidth(fromBaseRectWidth: frame.width, fromPercentage: 99)
-//        let _ = frame.height
-//        let marginX = CalcWidth(fromBaseRectWidth: frame.width, fromPercentage: 1)
-//        let marginY = frame.height - CalcWidth(fromBaseRectWidth: width, fromPercentage: 42.27)
-        
+        // Main width and margins.
+        let width = frame.width * 0.99
+        let marginX = frame.width * 0.01
+        let marginY = frame.height * 0.01
+
         // Set path - Outline.
         CGContextMoveToPoint(context, marginX, marginY)
-        CGContextAddLineToPoint(context, width, marginY)
-        CGContextAddLineToPoint(context, width, CalcWidth(fromBaseRectWidth: width, fromPercentage: 42.27))
-        CGContextAddLineToPoint(context, marginX, CalcWidth(fromBaseRectWidth: width, fromPercentage: 42.27))
+        CGContextAddLineToPoint(context, frame.width - marginX, marginY)
+        CGContextAddLineToPoint(context, width, frame.height - marginY)
+        CGContextAddLineToPoint(context, marginX, frame.height - marginY)
+        CGContextAddLineToPoint(context, marginX, frame.height - marginY)
         CGContextAddLineToPoint(context, marginX, marginY)
         
         // Set path - Middle line.
         CGContextMoveToPoint(context, frame.width * 0.5, marginY)
-        CGContextAddLineToPoint(context, frame.width * 0.5, CalcWidth(fromBaseRectWidth: width, fromPercentage: 42.27))
-        
+        CGContextAddLineToPoint(context, frame.width * 0.5, frame.height - marginY)
+
         // Set path - Middle circle.
         let circlePath = UIBezierPath(
             arcCenter: CGPoint(x:frame.width * 0.5,y:frame.height * 0.5),

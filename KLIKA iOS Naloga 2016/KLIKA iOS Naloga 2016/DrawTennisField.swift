@@ -9,8 +9,8 @@
 import UIKit
 
 struct TennisFieldDatasource:SportTypeDatasourceProtocol {
-    
-    func getDrawFieldDataContext(context: CGContext, width: CGFloat, height: CGFloat, frame: CGSize, marginX: CGFloat, marginY: CGFloat) -> CGContext {
+
+    func getDrawFieldDataContext(context: CGContext, frame: CGSize) -> CGContext {
         
         // Prepare "paint brush".
         let context = UIGraphicsGetCurrentContext() // Context is the object used for drawing.

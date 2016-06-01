@@ -30,11 +30,11 @@ class SportFieldView: UIView, MatchPitchProtocol, DrawShapesProtocol {
     func getPath(forSportType selector:SportTypes, andContext context:CGContext)->CGContext {
         switch selector {
         case .Basketball:
-            return BasketballFieldDatasource().getDrawFieldDataContext(context, width: (self.size?.width)!, height: (self.size?.height)!, frame: self.rect!, marginX: self.margin!.width, marginY: self.margin!.width)
+            return BasketballFieldDatasource().getDrawFieldDataContext(context, frame: self.rect!)
         case .Football:
-            return FootballFieldDatasource().getDrawFieldDataContext(context, width: (self.size?.width)!, height: (self.size?.height)!, frame: self.rect!, marginX: self.margin!.width, marginY: self.margin!.width)
+            return FootballFieldDatasource().getDrawFieldDataContext(context, frame: self.rect!)
         case .Tennis:
-            return TennisFieldDatasource().getDrawFieldDataContext(context, width: (self.size?.width)!, height: (self.size?.height)!, frame: self.rect!, marginX: self.margin!.width, marginY: self.margin!.width)
+            return TennisFieldDatasource().getDrawFieldDataContext(context, frame: self.rect!)
         }
     }
     
@@ -43,15 +43,11 @@ class SportFieldView: UIView, MatchPitchProtocol, DrawShapesProtocol {
     }
     
     override func drawRect(rect: CGRect) {
-        print("je kdo mene klicu?")
         if let _ = sportType {
-            // Prepare "paint brush".
             var context = UIGraphicsGetCurrentContext()
-            CGContextSetLineWidth(context, 1.0) // Set line width.
-            CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor) // Set color.
+            CGContextSetLineWidth(context, 1.0)
+            CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
             context = getPath(forSportType: sportType!, andContext: context!)
-            
-            // Draw the path.
             CGContextStrokePath(context)
         }
     }
