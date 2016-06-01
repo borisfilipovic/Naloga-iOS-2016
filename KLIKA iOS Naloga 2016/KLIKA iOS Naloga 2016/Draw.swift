@@ -26,13 +26,17 @@ class Draw:DrawShapesProtocol {
     }
 
     func getPath(forSportType selector: SportTypes) -> CGPath {
+        let tmp = UIBezierPath()
         switch selector {
         case .Basketball:
-            return Data().getBasketballFieldPath(width, height: height, rectWidth: rectWidth, rectHeight: rectHeight, marginX: marginX, marginY: marginY)
+            return tmp.CGPath
+            //return Data().getBasketballFieldPath(width, height: height, rectWidth: rectWidth, rectHeight: rectHeight, marginX: marginX, marginY: marginY)
         case .Football:
-            return Data().getFootballFieldPath(width, height: height, rectWidth: rectWidth, rectHeight: rectHeight, marginX: marginX, marginY: marginY)
+            return tmp.CGPath
+            //return Data().getFootballFieldPath(width, height: height, rectWidth: rectWidth, rectHeight: rectHeight, marginX: marginX, marginY: marginY)
         case .Tennis:
-            return Data().getTennisFieldPath(width, height: height, rectWidth: rectWidth, rectHeight: rectHeight, marginX: marginX, marginY: marginY)
+            return tmp.CGPath
+            //return Data().getTennisFieldPath(width, height: height, rectWidth: rectWidth, rectHeight: rectHeight, marginX: marginX, marginY: marginY)
         }
     }
     

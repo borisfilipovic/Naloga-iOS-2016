@@ -12,7 +12,7 @@ class FootballCV:UIViewController, MatchPitchProtocol {
     
     var vc:UIViewController?
     var sportTypeView:UIView?
-    var drawFieldView:DrawFootballField?
+    //var drawFieldView:DrawFootballField?
     var scoreAnimatedViewSize = CGSize(width: 150, height: 100)
     var animatedView = UIView()
     var animatedText = UILabel()
@@ -37,9 +37,9 @@ class FootballCV:UIViewController, MatchPitchProtocol {
         sportTypeView?.backgroundColor = UIColor.grayColor()
         
         // 2. Create football field.
-        drawFieldView = DrawFootballField(frame: CGRect(x: 0, y: 10, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.4175 + 10))
-        drawFieldView?.backgroundColor = UIColor.grayColor()
-        sportTypeView?.addSubview(drawFieldView!)
+        //drawFieldView = DrawFootballField(frame: CGRect(x: 0, y: 10, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width * 0.4175 + 10))
+        //drawFieldView?.backgroundColor = UIColor.grayColor()
+        //sportTypeView?.addSubview(drawFieldView!)
         
         return sportTypeView!
     }

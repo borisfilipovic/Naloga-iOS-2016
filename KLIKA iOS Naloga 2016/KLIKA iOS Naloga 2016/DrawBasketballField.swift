@@ -116,30 +116,16 @@ class DrawBasketballField: UIView {
         CGContextAddLineToPoint(context, marginX + rect.width * 0.1638 + rect.width * 0.0055, rect.height * 0.5 + rect.height * 0.165 + 1)
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         // Basketball rim left.
         // 1.
         CGContextMoveToPoint(context, marginX + rect.width * 0.0382, rect.height * 0.5 - rect.height * 0.065)
         CGContextAddLineToPoint(context, marginX + rect.width * 0.0382, rect.height * 0.5 + rect.height * 0.065)
+        
+        
         // 2.
         CGContextMoveToPoint(context, marginX + rect.width * 0.0382, rect.height * 0.5)
         CGContextAddLineToPoint(context, marginX + rect.width * 0.045, rect.height * 0.5)
+
         // 3.
         let circlePathRimLeft = UIBezierPath(
             arcCenter: CGPoint(x:marginX + rect.width * 0.051,y:rect.height * 0.5),
@@ -184,8 +170,12 @@ class DrawBasketballField: UIView {
             clockwise: true)
         CGContextAddPath(context, circlePathRight.CGPath)
         
+        
+        
         CGContextMoveToPoint(context, width, rect.height * 0.5 - rect.height * 0.165)
         CGContextAddLineToPoint(context,width + marginX - CalcWidth(fromBaseRectWidth: width, fromPercentage: 20.76), rect.height * 0.5 - rect.height * 0.165)
+        
+        
         CGContextAddLineToPoint(context, width + marginX - CalcWidth(fromBaseRectWidth: width, fromPercentage: 20.76), rect.height * 0.5 + rect.height * 0.165)
         CGContextAddLineToPoint(context, width, rect.height * 0.5 + rect.height * 0.165)
         
