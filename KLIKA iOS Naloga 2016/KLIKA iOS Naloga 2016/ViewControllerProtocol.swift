@@ -16,7 +16,6 @@ protocol ViewControllerProtocol {
     var homeCurrentScore:NSNumber {get set}
     var awayCurrentScore:NSNumber {get set}
     
-    func createView()
     func handleDraw(_type: SportTypes, height: CGFloat)
     func sendData()
 }

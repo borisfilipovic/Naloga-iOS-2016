@@ -13,6 +13,7 @@ struct GUIConstructor {
     func getTextField(frame: CGRect, tag: Int, color: UIColor) -> UITextField {
         let textField = UITextField(frame: frame)
         textField.tag = tag
+        textField.text = "0"
         textField.textAlignment = .Center
         textField.keyboardType = .NumberPad
         textField.backgroundColor = color

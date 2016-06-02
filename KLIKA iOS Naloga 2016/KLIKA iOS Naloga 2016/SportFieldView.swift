@@ -10,6 +10,7 @@ import UIKit
 
 class SportFieldView: UIView, MatchPitchProtocol, DrawShapesProtocol {
     
+    var animateScore = ScoreAnimation()
     var sportType: SportTypes?
     var size: CGSize?
     var rect: CGSize?
@@ -48,45 +49,16 @@ class SportFieldView: UIView, MatchPitchProtocol, DrawShapesProtocol {
     }
     
     func setDelegate(controller:ViewController){controller.delegate = self}
- 
-    var animatedView = UIView()
-    var animatedText = UILabel()
+    
     func setResultForHome(home: NSNumber?, andAway away: NSNumber?) {
         if let _ = home where home!.integerValue > homeCurrentScore!.integerValue {homeCurrentScore = home!}
         if let _ = away where away!.integerValue > awayCurrentScore!.integerValue {awayCurrentScore = away!}
         
-        animatedView = UIView(frame: CGRect(origin: CGPoint(x: -160, y: UIScreen.mainScreen().bounds.height * 0.38), size: CGSize(width: 150, height: 100)))
-        animatedView.backgroundColor = UIColor.whiteColor()
-        
-        animatedText = UILabel(frame: CGRect(origin: CGPoint(x: animatedView.frame.size.width * 0.1, y: animatedView.frame.size.height * 0.1), size: CGSize(width: animatedView.frame.size.width * 0.8, height: animatedView.frame.size.height * 0.8)))
-        animatedText.font.fontWithSize(20)
-        animatedText.text =  "\(homeOldScore!.integerValue):\(awayOldScore!.integerValue)"
-        animatedText.textAlignment = .Center
-        
-        animatedView.addSubview(animatedText)
-        addSubview(animatedView)
-        
-        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            self.animatedView.center.x = UIScreen.mainScreen().bounds.size.width * 0.5
-            }, completion: { finished in
-                UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    self.animatedText.alpha = 0
-                    }, completion: { finished in
-                        self.animatedText.text =  "\(self.homeCurrentScore!.integerValue):\(self.awayCurrentScore!.integerValue)"
-                        self.homeOldScore = self.homeCurrentScore
-                        self.awayOldScore = self.awayCurrentScore
-                        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                            self.animatedText.alpha = 1
-                            }, completion: { finished in
-                                UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                                    self.animatedView.center.x = UIScreen.mainScreen().bounds.size.width + self.animatedView.frame.size.width + 50
-                                    }, completion: { finished in
-                                        self.animatedView.center.x = UIScreen.mainScreen().bounds.size.width + self.animatedView.frame.size.width + 50
-                                        self.animatedView.removeFromSuperview()
-                                })
-                        })
-                })
-        })
+        animateScore = ScoreAnimation(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: UIScreen.mainScreen().bounds.height, height: UIScreen.mainScreen().bounds.height)))
+        addSubview(animateScore)
+        animateScore.animateScore(homeOldScore!, homeNewScore: homeCurrentScore!, awayOldScore: awayOldScore!, awayNewScore: awayCurrentScore!)
+        homeOldScore = homeCurrentScore
+        awayOldScore = awayCurrentScore
     }
     
     override func drawRect(rect: CGRect) {

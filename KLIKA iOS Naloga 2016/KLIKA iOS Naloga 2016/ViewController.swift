@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewControllerProto
     var scoreLabel = UILabel()
     var inputTextField1 = UITextField()
     var inputTextField2 = UITextField()
-    var tapRecognize:UITapGestureRecognizer? // Gesture recognizer.
+    var tapRecognize:UITapGestureRecognizer?
     let constructor = GUIConstructor() // GUI constructor.
     let helperUtil = HelperMethods()
     var delegate:MatchPitchProtocol? // Protocol delegate.
